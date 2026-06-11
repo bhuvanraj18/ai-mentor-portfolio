@@ -1,0 +1,59 @@
+Ravi Kumar
+Email: ravi.kumar@example.com
+Phone: +91 98765 43210
+Education: B.Tech in Computer Science and Engineering, Aditya University, 2026
+Skills: Python, Django, REST APIs, PostgreSQL, Git, Docker
+Projects:
+- E-commerce Backend: Developed a scalable backend using Django and PostgreSQL.
+- Task Scheduler: Built a task scheduling system using Python.
+Experience:
+- Software Engineer Intern at TechSolutions (12 months): Built APIs and optimized queries.
+
+---
+
+Sneha Reddy
+Email: sneha.reddy@example.com
+Phone: +91 98765 43211
+Education: B.Tech in CSE, Aditya University, 2026
+Skills: React, JavaScript, HTML, CSS, TailwindCSS, Node.js
+Projects:
+- Frontend Dashboard: Designed a modern UI dashboard using React and Tailwind.
+- Weather Web App: Integrated open APIs to fetch live weather data.
+Experience:
+- Frontend Development Intern at WebCraft (6 months): Designed responsive landing pages.
+
+---
+
+Arun Pillai
+Email: arun.pillai@example.com
+Phone: +91 98765 43212
+Education: B.Tech in Computer Science, Aditya University, 2026
+Skills: Java, Spring Boot, MySQL, AWS, Docker, Kubernetes, Git, Jenkins, Linux
+Projects:
+- Microservices System: Built microservices using Spring Boot.
+- CI/CD Automation: Configured deployment pipelines using Jenkins and Kubernetes.
+Experience:
+- Backend Intern at CloudSystems (1 year): Optimized Java databases and set up container orchestration.
+
+---
+
+Priya Nair
+Phone: +91 98765 43213
+Education: B.Tech in CSE, Aditya University, 2026
+Skills: Python, SQL, Tableau
+Projects:
+- Sales Data Analysis: Analyzed and visualized sales data with Tableau.
+Experience:
+- Fresher (No formal industry experience)
+
+---
+
+Suresh Patel
+Email: suresh.patel@example.com
+Phone: +91 98765 43214
+Education: B.Tech in Information Technology, Aditya University, 2026
+Skills: JavaScript, Node.js, Express, MongoDB, Git
+Projects:
+- Chat Application: Implemented real-time chat utilizing WebSockets and Node.js.
+Experience:
+- Backend Developer Intern at AppStudio (3 months)
