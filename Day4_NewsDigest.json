@@ -1,0 +1,146 @@
+{
+  "name": "Daily Placement News Digest",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cron",
+              "expression": "0 7 * * *"
+            }
+          ]
+        },
+        "timezone": "Asia/Kolkata"
+      },
+      "id": "1",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://news.ycombinator.com/rss",
+        "options": {
+          "limit": 10
+        }
+      },
+      "id": "2",
+      "name": "RSS Read",
+      "type": "n8n-nodes-base.rssRead",
+      "typeVersion": 1,
+      "position": [
+        450,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headersUi": {
+          "parameter": [
+            {
+              "name": "x-goog-api-key",
+              "value": "={{ $env.GEMINI_API_KEY }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"{{ 'Summarise these RSS items into 5 bullets for a placement coach. Each bullet ≤ 20 words. Highlight any item signalling new hiring, layoffs, or significant tech demand changes. Items follow:\\n\\n' + $json.items.map(i => '- ' + i.title + ': ' + (i.contentSnippet || i.content || '')).join('\\n') }}\"\n        }\n      ]\n    }\n  ]\n}",
+        "options": {}
+      },
+      "id": "3",
+      "name": "HTTP Request (Gemini)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        650,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "dummy-header-auth-id",
+          "name": "Gemini API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "toEmail": "bhuvanrajpatnaik2005@gmail.com",
+        "subject": "=Placement News Digest — {{ $now.format('dd MMM yyyy') }}",
+        "emailType": "text",
+        "message": "=Good morning. Today's placement news digest:\n\n{{ $json[\"candidates\"][0][\"content\"][\"parts\"][0][\"text\"] }}\n\nSent automatically by n8n at 7:00 AM IST.",
+        "options": {}
+      },
+      "id": "4",
+      "name": "Gmail Send",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 1,
+      "position": [
+        850,
+        300
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "dummy-gmail-oauth2-id",
+          "name": "Gmail Account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS Read": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request (Gemini)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request (Gemini)": {
+      "main": [
+        [
+          {
+            "node": "Gmail Send",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "bc2b35a8-fb36-4d0f-8700-6ad5845c4ffb",
+  "id": "5",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}
