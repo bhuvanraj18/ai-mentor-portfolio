@@ -8,7 +8,7 @@ Public portfolio of 12-day AI Trainer Workshop. By Day 12: 6 daily notebooks + c
 
 - ✅ Google AI Studio API key provisioned
 - ✅ Groq API key provisioned
-- ✅ Hello-Gemini call working — see [Day1_Setup.ipynb](Day1_Setup.ipynb) (mocked/created during bootcamp setup)
+- ✅ Hello-Gemini call working — see [Day1_Setup.ipynb](Day1_Setup.ipynb)
 - ✅ 4-tool comparison matrix from Lab 1A completed:
 
 | Tool | Task 1 (Summarise) | Task 2 (Code) | Task 3 (Reason) | My Verdict |
@@ -17,6 +17,8 @@ Public portfolio of 12-day AI Trainer Workshop. By Day 12: 6 daily notebooks + c
 | **Claude** | 5/5 | 4/5 | 5/5 | *Best for thorough writing and careful reasoning. Slower.* |
 | **Gemini** | 4/5 | 3/5 | 3/5 | *Good for quick factual queries. Weaker at code constraints.* |
 | **Perplexity** | 4/5 | 3/5 | 2/5 | *Best when I need cited sources. Weakest for pure reasoning.* |
+
+![Gemini first call](gemini_first_call.png)
 
 ---
 
