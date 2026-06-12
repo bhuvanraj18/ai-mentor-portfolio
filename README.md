@@ -53,6 +53,21 @@ Developed a Python routine integrated with the Gemini API and Pydantic to parse 
 
 ---
 
+## Day 3 — Labs Complete
+
+### Day 3 Lab 3A: Verification Chain
+Verified 5 AI-generated engineering campus placement statistics across a 3-step chain (AI ➡️ Perplexity ➡️ Primary Source).
+- **Matrix and Reflection:** [Day3_Verification.md](Day3_Verification.md)
+- **Key Findings:** Identified 2 claims that were `PARTIAL` and 1 claim that was `FALSE` (e.g. NASSCOM does not publish average college-level placement package figures; that was a model confabulation).
+
+### Day 3 Lab 3B: Placement-Cell AI Policy
+Drafted a 1-page enforceable policy that outlines permitted and prohibited student use of generative AI in campus placements using EU AI Act risk tiers.
+- **AI Policy Document (PDF):** [Day3_AI_Policy.pdf](Day3_AI_Policy.pdf)
+- **Scenarios Classed:** 8 scenarios mapped to risk tiers (e.g. AI-cloned voice is *Unacceptable*, AI-coded portfolio is *High-risk* requiring oral defense, and mock interviews are *Minimal* risk).
+- **Enforcement:** Realistic detection bounds combined with random project oral defenses for 20% of placed students.
+
+---
+
 ## Day 4 — Productivity Sprint (Lab 4A)
 
 **Company:** TCS (Tata Consultancy Services)  
